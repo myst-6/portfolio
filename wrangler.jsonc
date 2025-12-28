@@ -1,0 +1,19 @@
+{
+    "name": "borishall-portfolio",
+    "pages_build_output_dir": "dist",
+    "compatibility_date": "2024-12-01",
+    
+    // Your domain configuration
+    "routes": [
+      {
+        "pattern": "borishall.com",
+        "custom_domain": true
+      },
+      {
+        "pattern": "www.borishall.com",
+        "custom_domain": true
+      }
+    ]
+  }
+  
+  
