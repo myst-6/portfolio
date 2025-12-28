@@ -6,11 +6,12 @@ interface Project {
   description: string
   highlights: string[]
   tags: string[]
+  link?: string
 }
 
 const projects: Project[] = [
   {
-    title: 'Nutor',
+    title: 'Sparkmark',
     period: 'Aug 2025 – present',
     description: 'Website for teachers to organise classes, create tests and assignments, and mark results using AI',
     highlights: [
@@ -28,7 +29,8 @@ const projects: Project[] = [
       'Explored cloud services including VM rental for an online grader and used cloud functions to build an API (Recently replaced with Containers for cheaper and faster execution).',
       'Deepened understanding of algorithmic concepts by writing and reviewing editorials and solutions for past BIO problems.'
     ],
-    tags: ['Next.js', 'Team Lead', 'Cloud', 'Algorithms']
+    tags: ['Next.js', 'Team Lead', 'Cloud', 'Algorithms'],
+    link: 'https://www.britishinformatics.org'
   },
   {
     title: 'Codeforces Round 982',
@@ -38,7 +40,8 @@ const projects: Project[] = [
       'Adapted problems to feedback from coordinators and testers.',
       'Contest attracted 25,000+ participants and was well-received.'
     ],
-    tags: ['Competitive Programming', 'Problem Setting']
+    tags: ['Competitive Programming', 'Problem Setting'],
+    link: 'https://codeforces.com/contest/2027'
   }
 ]
 
@@ -51,7 +54,15 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-header">
-                <h3>{project.title}</h3>
+                <h3>
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer">
+                      {project.title}
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h3>
                 <span className="project-period">{project.period}</span>
               </div>
               <p className="project-description">{project.description}</p>

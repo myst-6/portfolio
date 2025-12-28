@@ -8,6 +8,7 @@
   opacity: 0;
   transform: translateY(30px);
   transition: all 1s ease;
+  padding: 0 8rem;
 }
 
 .hero-content.visible {
@@ -123,15 +124,23 @@
   }
 }
 
-@media (max-width: 768px) {
-  .hero-vertical-text {
-    right: 1rem;
-    font-size: 0.6rem;
+@media (max-width: 1200px) {
+  .hero-content {
+    padding: 0 2rem;
   }
+  
+  .hero-vertical-text {
+    display: none;
+  }
+}
 
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
   .hero-details {
     font-size: 0.9rem;
-    padding: 0 1rem;
   }
 
   .circle-1, .circle-2 {
